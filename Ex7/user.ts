@@ -2,7 +2,7 @@ export class User {
     constructor(
         public name: string,
         public email: string,
-        public password: string,    //salva como Hash
+        public password: string,    //salva como Hash 
         public id?: string
     ) {}
 }
