@@ -34,9 +34,7 @@ describe('App', () => {
     it('should throw an exception when trying to move an unregistered bike', () => {
       const app = new App()
       const newYork = new Location(40.753056, -73.983056)
-      app.moveBikeTo(1234567, newYork)
-      expect(bike.location.latitude).toThrow('Bike not found or not exist.')
-      expect(bike.location.longitude).toThrow('Bike not found or not exist.')
+      expect(() => {app.moveBikeTo(bike.id, newYork)}).toThrow('Bike not found or not exist.')
     })
   
     it('should throw an exception when trying to move an unregistered bike', () => {
@@ -46,8 +44,6 @@ describe('App', () => {
       app.registerBike(bike)
       const notId = bike.id+1
       const newYork = new Location(40.753056, -73.983056)
-      app.moveBikeTo(bike.id, newYork)
-      expect(bike.location.latitude).toThrow('Bike not found or not exist.')
-      expect(bike.location.longitude).toThrow('Bike not found or not exist.')
+      expect(() => {app.moveBikeTo(bike.id, newYork)}).toThrow('Bike not found or not exist.')
     })
 })
