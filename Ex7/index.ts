@@ -4,6 +4,7 @@ import { Rent } from "./rent";
 import { User } from "./user";
 import sinon from 'sinon'
 
+
 async function main() {
     const clock = sinon.useFakeTimers();
     const app = new App()
